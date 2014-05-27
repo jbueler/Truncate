@@ -40,10 +40,16 @@ class TruncateTwigExtension extends \Twig_Extension
 					$pos   = array_keys($words);
 					$str   = ($mb_ok) ? mb_substr($str, 0, $pos[$limit], $charset) : substr($str, 0, $pos[$limit]);
 				}
+				else{
+					return $str;
+				}
 				break;
 
 			// Default to counting by chars
 			default:
+				if (strlen($str) < $limit) {
+					return $str;
+				}
 				$str = ($mb_ok) ? mb_substr($str, 0, $limit, $charset) : substr($str, 0, $limit);
 				break;
 		}
