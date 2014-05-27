@@ -9,6 +9,10 @@ Usage
 {{ entry.body | truncate('words', '150', '...', true) }}
 ```
 
+```php
+{{ entry.body | truncate('words', '150', '&hellip;', true) }}
+```
+
 Params
 ======
 
