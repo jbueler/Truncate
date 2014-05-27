@@ -54,7 +54,7 @@ class TruncateTwigExtension extends \Twig_Extension
 				break;
 		}
 
-		return rtrim($str).$ending;
+		return rtrim($str).html_entity_decode($ending);
 	}
 
 }
